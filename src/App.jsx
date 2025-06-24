@@ -16,4 +16,4 @@ function App() {
 
 export default App;
 
-console.log("Found Issue 1");
+console.log("Found Issue 1 and understood the code");
