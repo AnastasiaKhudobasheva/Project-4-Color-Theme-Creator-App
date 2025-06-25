@@ -1,5 +1,7 @@
 import ColorInput from "../ColorInput/ColorInput";
 import "./ColorForm.css";
+// import { useState } from "react";
+import { nanoid } from "nanoid";
 
 // declaring a React component
 // It expects two props:
@@ -18,8 +20,15 @@ export default function ColorForm({
     const formData = new FormData(event.target);
     //convert the FormData into a plain JavaScript object eg { role: "xxx", hex: "xxx", contrastText: "xxx" }
     const data = Object.fromEntries(formData);
+    // generate stable unique ID and add to data (role, hex, contrastText)
+    const newColor = {
+      id: nanoid(),
+      ...data,
+    };
     //send this object up to a parent handler in App.jsx
-    onSubmitColor(data);
+    onSubmitColor(newColor);
+    //reset form after submitting
+    event.target.reset();
   }
 
   /// JSX Form Structure
@@ -92,3 +101,6 @@ export default function ColorForm({
 // It starts with default values to guide users
 // On submission, it builds a JS object with role, hex, contrastText
 // and calls onSubmitColor(data), which WE define in App.jsx
+
+// generating ID (nanoid()) inside handleSubmit -> newColor object
+//calling onSubmitColor(newColor) with the full object incl ID

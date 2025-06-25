@@ -25,3 +25,11 @@ function App() {
 }
 
 export default App;
+
+// Workflow:
+
+// Issue 2:
+
+// colors holds current theme color
+// handleAddColor prepends a new color to the array
+// <ColorForm onSubmitColor={...}/> passes this function down to the form (as a prop)
