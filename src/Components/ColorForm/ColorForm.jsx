@@ -11,7 +11,11 @@ import { nanoid } from "nanoid";
 
 export default function ColorForm({
   onSubmitColor,
-  initialData = { role: "some color", hex: "#123456", contrastText: "#ffffff" },
+  initialData = {
+    role: "e.g. accent color",
+    hex: "#C0517A",
+    contrastText: "#FFFFFF",
+  },
 }) {
   function handleSubmit(event) {
     // stop the page from refreshing on submit
