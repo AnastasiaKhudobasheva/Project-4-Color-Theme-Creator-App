@@ -13,7 +13,7 @@ export default function ColorForm({
   isEditing,
   initialData = {
     role: "e.g. accent color",
-    hex: "#C0517A",
+    hex: "#000000",
     contrastText: "#FFFFFF",
   },
 }) {
