@@ -1,11 +1,14 @@
 import { initialColors } from "./assets/colors";
 import Color from "./Components/Color/Color";
 import "./App.css";
-import { useState } from "react";
+// import { useState } from "react";
 import ColorForm from "./Components/ColorForm/ColorForm";
+import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-  const [colors, setColors] = useState(initialColors);
+  const [colors, setColors] = useLocalStorageState("colors", {
+    defaultValue: initialColors,
+  });
   // const [colorToEdit, setColorToEdit] = useState(null);
 
   const handleAddColor = (newColor2) => {
