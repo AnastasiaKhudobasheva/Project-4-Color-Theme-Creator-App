@@ -42,12 +42,14 @@ function App() {
 
   return (
     <main>
-      <h1>Theme Creator</h1>
+      <h1 className="header">Theme Creator</h1>
       <ColorForm onSubmitColor={handleAddColor} />
-      <button onClick={handleResetTheme}>Back to Original Theme</button>
+      <button className="reset-button" onClick={handleResetTheme}>
+        ✖️ Back to Original Theme
+      </button>
 
       {colors.length === 0 ? (
-        <p>No colors yet — add some!</p>
+        <p className="empty-message">No colors yet — add some!</p>
       ) : (
         colors.map((color) => (
           <Color
