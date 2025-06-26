@@ -24,3 +24,7 @@ body {
   margin: 0px 10px;
   /* font-size: 1.5rem; */
 }
+
+button {
+  margin: 0.1rem 0rem; /* Adjust vertical space between all buttons */
+}
