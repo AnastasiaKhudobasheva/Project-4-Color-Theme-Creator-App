@@ -1,7 +1,7 @@
 import { initialColors } from "./assets/colors";
 import Color from "./Components/Color/Color";
 import "./App.css";
-// import { useState } from "react";
+
 import ColorForm from "./Components/ColorForm/ColorForm";
 import useLocalStorageState from "use-local-storage-state";
 
@@ -9,7 +9,6 @@ function App() {
   const [colors, setColors] = useLocalStorageState("colors", {
     defaultValue: initialColors,
   });
-  // const [colorToEdit, setColorToEdit] = useState(null);
 
   const handleAddColor = (newColor2) => {
     setColors((oldColors) => [newColor2, ...oldColors]);
@@ -22,17 +21,12 @@ function App() {
     });
   };
 
-  // const handleChooseColorToEdit = (id) => {
-  //   setColorToEdit(colors.find((x) => x.id === id));
-  // };
-
   const handleEditColor = (changedColor) => {
     setColors((oldColors) => {
       return oldColors.map((x) =>
         x.id === changedColor.id ? changedColor : x
       );
     });
-    // setColorToEdit(null);
   };
 
   function handleResetTheme() {
