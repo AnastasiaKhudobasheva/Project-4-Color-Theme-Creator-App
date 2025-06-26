@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./ColorInput.css";
 
 //component w/two props:
 //id – a string, like "hex" or "contrastText", which is used for element linking
@@ -24,13 +25,19 @@ export default function ColorInput({ id, defaultValue }) {
   return (
     <>
       <input
+        className="input-text"
         type="text"
         id={id}
         name={id}
         value={inputValue}
         onChange={handleInputValue}
       />
-      <input type="color" value={inputValue} onChange={handleInputValue} />
+      <input
+        className="input-color"
+        type="color"
+        value={inputValue}
+        onChange={handleInputValue}
+      />
     </>
   );
 }
