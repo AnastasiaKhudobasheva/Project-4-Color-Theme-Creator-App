@@ -1,8 +1,10 @@
 import "./Color.css";
 import { useState } from "react";
+import ColorForm from "../ColorForm/ColorForm";
 
-export default function Color({ color, onDeleteColor }) {
+export default function Color({ color, onDeleteColor, onSubmitColor }) {
   const [isConfirmingDelete, setIsConfirmingDelete] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleDeleteConfirmation = () => {
     setIsConfirmingDelete(true); // Show confirmation
@@ -19,29 +21,61 @@ export default function Color({ color, onDeleteColor }) {
     setIsConfirmingDelete(false); // Hide confirmation
   };
 
+  // enable editing when the edit button is clicked
+  const handleEdit = () => {
+    setIsEditing(true);
+    // Set isEditing to true to show the form
+  };
+
+  // cancel editing when the cancel button is clicked
+  const handleCancel = () => {
+    setIsEditing(false); // set isEditing to false so it hides the form
+  };
+
+  // color update and send it to the parent component
+  const handleUpdateColor = (updatedColor) => {
+    onSubmitColor(updatedColor);
+    setIsEditing(false);
+    // close the edit form after updating the color
+  };
+
   return (
     <div
       className="color-card"
-      style={{
-        background: color.hex,
-        color: color.contrastText,
-      }}
+      style={{ background: color.hex, color: color.contrastText }}
     >
-      <h3 className="color-card-headline">{color.hex}</h3>
-      <h4>{color.role}</h4>
-      <p>contrast: {color.contrastText}</p>
-
-      {isConfirmingDelete ? (
-        <div>
-          <div className="delete-confirmation">Delete color?</div>
-          <button onClick={handleConfirmDelete}>Yes</button>
-          <button onClick={handleCancelDelete}>Cancel</button>
-        </div>
+      {isEditing ? (
+        // ========== EDIT MODE ==========
+        <>
+          <ColorForm
+            onSubmitColor={(updatedColor) => {
+              handleUpdateColor(updatedColor);
+            }}
+            initialData={color}
+            isEditing={true}
+          />
+          <button onClick={handleCancel}>Cancel Edit</button>
+        </>
       ) : (
-        <button onClick={handleDeleteConfirmation}>Delete</button>
-      )}
+        // ========== VIEW MODE ==========
+        <>
+          <h3 className="color-card-headline">{color.hex}</h3>
+          <h4>{color.role}</h4>
+          <p>contrast: {color.contrastText}</p>
 
-      {/* <button onClick={() => onDeleteColor(color.id)}>Delete Color</button> */}
+          {isConfirmingDelete ? (
+            <div>
+              <div className="delete-confirmation">Delete color?</div>
+              <button onClick={handleConfirmDelete}>Yes</button>
+              <button onClick={handleCancelDelete}>Cancel</button>
+            </div>
+          ) : (
+            <button onClick={handleDeleteConfirmation}>Delete</button>
+          )}
+
+          <button onClick={handleEdit}>Edit</button>
+        </>
+      )}
     </div>
   );
 }
