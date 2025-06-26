@@ -1,31 +1,36 @@
 export const initialColors = [
-  { id: "c1", role: "primary main", hex: "#ff4a11", contrastText: "#FFFFFF" }, // Vibrant orange
-  { id: "c2", role: "primary dark", hex: "#c73e0b", contrastText: "#FFFFFF" }, // Darker shade of orange
-  { id: "c3", role: "primary light", hex: "#ff7a3e", contrastText: "#000000" }, // Lighter shade of orange
-  { id: "c4", role: "secondary main", hex: "#5C6BC0", contrastText: "#FFFFFF" }, // Indigo Blue
-  { id: "c5", role: "secondary dark", hex: "#3949AB", contrastText: "#FFFFFF" }, // Darker indigo blue
+  { id: "c1", role: "primary main", hex: "#C20E1F", contrastText: "#FFFFFF" }, // Intense True Red
+  { id: "c2", role: "primary dark", hex: "#8C0D12", contrastText: "#FFFFFF" }, // Deep Visceral Crimson
+  { id: "c3", role: "primary light", hex: "#E31F2F", contrastText: "#000000" }, // Blood Red Light (for accents)
+  { id: "c4", role: "secondary main", hex: "#D87C8C", contrastText: "#000000" }, // Soft Flesh Pink
+  {
+    id: "c5",
+    role: "secondary light",
+    hex: "#E3A1AA",
+    contrastText: "#000000",
+  }, // Ghostly Pastel Rosé
   {
     id: "c6",
-    role: "secondary light",
-    hex: "#9FA8DA",
-    contrastText: "#000000",
-  }, // Lighter indigo blue
+    role: "overlay",
+    hex: "rgba(195,15,27,0.5)",
+    contrastText: "#FFFFFF",
+  }, // Translucent Red Overlay
   {
     id: "c7",
     role: "background main",
-    hex: "#252629",
+    hex: "#1A1A1A",
     contrastText: "#FFFFFF",
-  }, // Dark charcoal
+  }, // Deep Charcoal
   {
     id: "c8",
     role: "background dark",
-    hex: "#1b1d1f",
+    hex: "#0D0D0D",
     contrastText: "#FFFFFF",
-  }, // Darker charcoal
+  }, // Near-Black Depth
   {
     id: "c9",
     role: "background light",
-    hex: "#43464b",
-    contrastText: "#FFFFFF",
-  }, // Lighter charcoal
+    hex: "#F4F2F3",
+    contrastText: "#000000",
+  }, // Edge White (light highlights)
 ];
