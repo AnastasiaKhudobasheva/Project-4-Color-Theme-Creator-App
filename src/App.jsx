@@ -35,10 +35,16 @@ function App() {
     // setColorToEdit(null);
   };
 
+  function handleResetTheme() {
+    localStorage.removeItem("colors");
+    setColors(initialColors); // reset state to original theme
+  }
+
   return (
     <main>
       <h1>Theme Creator</h1>
       <ColorForm onSubmitColor={handleAddColor} />
+      <button onClick={handleResetTheme}>Back to Original Theme</button>
 
       {colors.length === 0 ? (
         <p>No colors yet — add some!</p>
