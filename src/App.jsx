@@ -1,7 +1,6 @@
+import "./App.css";
 import { initialColors } from "./assets/colors";
 import Color from "./Components/Color/Color";
-import "./App.css";
-
 import ColorForm from "./Components/ColorForm/ColorForm";
 import useLocalStorageState from "use-local-storage-state";
 
@@ -30,7 +29,6 @@ function App() {
   };
 
   function handleResetTheme() {
-    localStorage.removeItem("colors");
     setColors(initialColors); // reset state to original theme
   }
 
@@ -43,7 +41,7 @@ function App() {
       </button>
 
       {colors.length === 0 ? (
-        <p className="empty-message">No colors yet — add some!</p>
+        <p className="empty-message">No colors yet / add some!</p>
       ) : (
         colors.map((color) => (
           <Color
@@ -54,6 +52,27 @@ function App() {
           />
         ))
       )}
+
+      <footer className="app-footer">
+        <p>
+          Made ✞ by{" "}
+          <a
+            href="https://github.com/AnastasiaKhudobasheva"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Anastasia K
+          </a>{" "}
+          / Inspired by{" "}
+          <a
+            href="https://biterecords.bandcamp.com/album/scanning-backwards"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Phase Fatale "Scanning Backwards"
+          </a>
+        </p>
+      </footer>
     </main>
   );
 }

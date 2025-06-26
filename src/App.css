@@ -28,3 +28,18 @@ body {
 button {
   margin: 0.1rem 0rem; /* Adjust vertical space between all buttons */
 }
+
+.app-footer {
+  /* margin-top: 1rem; */
+  margin: 3px 10px;
+  padding: 1rem 0rem;
+  text-align: left;
+  font-size: 0.9rem;
+  color: black;
+  background-color: white;
+}
+
+.app-footer a {
+  color: #e31f2f; /* blood accent color from theme palette */
+  text-decoration: none;
+}
