@@ -2,3 +2,9 @@ body {
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   padding: 10px;
 }
+
+.empty-message {
+  font-style: bold;
+  color: #150f0f;
+  padding: 1rem;
+}

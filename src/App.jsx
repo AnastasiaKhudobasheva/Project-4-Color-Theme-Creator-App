@@ -21,18 +21,23 @@ function App() {
   return (
     <main>
       <h1>Theme Creator</h1>
-
       <ColorForm onSubmitColor={handleAddColor} />
 
-      {colors.map((color) => {
-        return (
-          <Color
-            key={color.id}
-            color={color}
-            onDeleteColor={handleDeleteColor}
-          />
-        );
-      })}
+      {/* // Show a message if colors array is empty */}
+      {colors.length === 0 ? (
+        <p className="empty-message">No colors yet — add some!</p>
+      ) : (
+        colors.map((color) => {
+          return (
+            <Color
+              key={color.id}
+              color={color}
+              onDeleteColor={handleDeleteColor}
+            />
+          );
+        })
+      )}
+      {/* // Pass it to <Color /> */}
     </main>
   );
 }
