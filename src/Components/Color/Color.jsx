@@ -54,7 +54,9 @@ export default function Color({ color, onDeleteColor, onSubmitColor }) {
             initialData={color}
             isEditing={true}
           />
-          <button onClick={handleCancel}>Cancel Edit</button>
+          <button className="button-cancel-edit" onClick={handleCancel}>
+            Cancel Edit
+          </button>
         </>
       ) : (
         // ========== VIEW MODE ==========
@@ -66,14 +68,31 @@ export default function Color({ color, onDeleteColor, onSubmitColor }) {
           {isConfirmingDelete ? (
             <div>
               <div className="delete-confirmation">Delete color?</div>
-              <button onClick={handleConfirmDelete}>Yes</button>
-              <button onClick={handleCancelDelete}>Cancel</button>
+              <button
+                className="button-delete-yes"
+                onClick={handleConfirmDelete}
+              >
+                Yes
+              </button>
+              <button
+                className="button-delete-cancel"
+                onClick={handleCancelDelete}
+              >
+                Cancel
+              </button>
             </div>
           ) : (
-            <button onClick={handleDeleteConfirmation}>Delete</button>
+            <button
+              className="button-delete"
+              onClick={handleDeleteConfirmation}
+            >
+              Delete
+            </button>
           )}
 
-          <button onClick={handleEdit}>Edit</button>
+          <button className="button-edit" onClick={handleEdit}>
+            Edit
+          </button>
         </>
       )}
     </div>

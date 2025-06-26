@@ -15,6 +15,7 @@ export const initialColors = [
     hex: "rgba(195,15,27,0.5)",
     contrastText: "#FFFFFF",
   }, // Translucent Red Overlay
+
   {
     id: "c7",
     role: "background main",
