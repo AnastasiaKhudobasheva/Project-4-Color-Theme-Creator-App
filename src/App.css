@@ -17,12 +17,12 @@ body {
 }
 
 .reset-button {
-  margin: 0px 10px;
+  margin: 0px 0px 1px 10px;
 }
 
 .header {
   margin: 0px 10px;
-  /* font-size: 1.5rem; */
+  font-size: 6rem;
 }
 
 button {

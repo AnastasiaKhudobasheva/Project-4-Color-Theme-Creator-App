@@ -69,7 +69,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Phase Fatale "Scanning Backwards"
+            Phase Fatale &quot;Scanning Backwards&quot;
           </a>
         </p>
       </footer>
