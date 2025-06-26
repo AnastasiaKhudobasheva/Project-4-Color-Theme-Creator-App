@@ -6,6 +6,7 @@ import ColorForm from "./Components/ColorForm/ColorForm";
 
 function App() {
   const [colors, setColors] = useState(initialColors);
+  // const [colorToEdit, setColorToEdit] = useState(null);
 
   const handleAddColor = (newColor2) => {
     setColors((oldColors) => [newColor2, ...oldColors]);
@@ -18,26 +19,36 @@ function App() {
     });
   };
 
+  // const handleChooseColorToEdit = (id) => {
+  //   setColorToEdit(colors.find((x) => x.id === id));
+  // };
+
+  const handleEditColor = (changedColor) => {
+    setColors((oldColors) => {
+      return oldColors.map((x) =>
+        x.id === changedColor.id ? changedColor : x
+      );
+    });
+    // setColorToEdit(null);
+  };
+
   return (
     <main>
       <h1>Theme Creator</h1>
       <ColorForm onSubmitColor={handleAddColor} />
 
-      {/* // Show a message if colors array is empty */}
       {colors.length === 0 ? (
-        <p className="empty-message">No colors yet — add some!</p>
+        <p>No colors yet — add some!</p>
       ) : (
-        colors.map((color) => {
-          return (
-            <Color
-              key={color.id}
-              color={color}
-              onDeleteColor={handleDeleteColor}
-            />
-          );
-        })
+        colors.map((color) => (
+          <Color
+            key={color.id}
+            color={color}
+            onDeleteColor={handleDeleteColor}
+            onSubmitColor={handleEditColor}
+          />
+        ))
       )}
-      {/* // Pass it to <Color /> */}
     </main>
   );
 }

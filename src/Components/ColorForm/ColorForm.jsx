@@ -10,6 +10,7 @@ import { nanoid } from "nanoid";
 
 export default function ColorForm({
   onSubmitColor,
+  isEditing,
   initialData = {
     role: "e.g. accent color",
     hex: "#C0517A",
@@ -75,7 +76,7 @@ export default function ColorForm({
         <ColorInput id="contrastText" defaultValue={initialData.contrastText} />
       </label>
       <br />
-      <button>➕ new color</button>
+      <button>{isEditing ? "Save" : "➕ new color"}</button>
     </form>
   );
 }
