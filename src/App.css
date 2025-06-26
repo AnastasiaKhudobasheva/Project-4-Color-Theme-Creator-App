@@ -1,10 +1,16 @@
+/* // "https://f4.bcbits.com/img/a3813057022_10.jpg" */
+
 body {
-  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  padding: 10px;
+  font-family: "Bebas Neue", sans-serif;
+  padding: 20px;
+  font-size: 1.05rem;
+  font-weight: normal;
+  letter-spacing: 0.2px;
 }
 
 .empty-message {
-  font-style: bold;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5rem;
   color: #150f0f;
   padding: 1rem;
 }
