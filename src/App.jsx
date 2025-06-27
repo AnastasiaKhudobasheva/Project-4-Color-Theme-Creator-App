@@ -34,7 +34,7 @@ function App() {
 
   return (
     <main>
-      <h1 className="header">Theme Creator</h1>
+      <h1 className="header">Theme / Creator .</h1>
       <ColorForm onSubmitColor={handleAddColor} />
       <button className="reset-button" onClick={handleResetTheme}>
         ✖️ Back to Original Theme
